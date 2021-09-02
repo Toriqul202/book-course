@@ -52,7 +52,7 @@ const getBookDetail= detail=>{
    });
 //    founding book meassege 
    const searchField=document.getElementById('searchField')
-   if(searchField.value == ''){
+   if(searchField.value === ''){
     document.getElementById('quantityMessage').innerText=`Type Something For Search `
    }
    else{
