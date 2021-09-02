@@ -1,3 +1,4 @@
+//  ------------------load book data ---------
 const loadBook=()=>{
     
     const searchField=document.getElementById('searchField');
@@ -8,17 +9,9 @@ const loadBook=()=>{
     
     .then(data=>getBookDetail(data))
 
-    // fetch(url)
-    // .then(res=>res.json())
-    // .then(data=>getBookDetail(data.docs))
-    
-
-    
-    
-
 }
 
-
+// ----------book detail--------------- 
 const getBookDetail= detail=>{
     const parent=document.getElementById('parent')
     parent.textContent='';
@@ -31,18 +24,11 @@ const getBookDetail= detail=>{
        
          <div class="col border rounded p-3 ">
          <div class="d-flex justify-content-center mb-2">
+        
           
-             
-               
-                  <img src='https://covers.openlibrary.org/b/id/${book.cover_i }-M.jpg'>
-                
-             
-         
-            
-        
-        
-        
+         <img src='https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg'> 
          </div>
+        
           
           <h5 class="p-3 broder border rounded">Book Name:${book.title ? book.title :'Not Found' }</h5>
           <h5 class="p-3 broder border rounded">Author Name:${book.author_name?book.author_name[0] :'Not Found' }</h5>
@@ -64,6 +50,7 @@ const getBookDetail= detail=>{
      
      
    });
+//    founding book meassege 
    const searchField=document.getElementById('searchField')
    if(searchField.value == ''){
     document.getElementById('quantityMessage').innerText=`Type Something For Search `
@@ -76,14 +63,7 @@ const getBookDetail= detail=>{
     
   
 };
-console.log('jamela ache');
-const loadImage=(cover_i)=>{
-    const searchField=document.getElementById('searchField');
-    const searchText=searchField.value
-    fetch(`https://covers.openlibrary.org/b/id/${cover_i}-M.jpg`)
-    .then(res=>res.json)
-    .then(json=>console.log(json))
-}
+
 
 
 
