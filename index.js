@@ -9,6 +9,7 @@ const loadBook=()=>{
     
     .then(data=>getBookDetail(data))
     
+    
 }
 
 // ----------book detail--------------- 
@@ -24,7 +25,7 @@ const getBookDetail= detail=>{
        
          <div class="col border rounded p-3 ">
          <div class="d-flex justify-content-center mb-2">
-        
+         
           
          <img src='https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg'> 
          </div>
@@ -43,15 +44,16 @@ const getBookDetail= detail=>{
      
 
      parent.appendChild(div)
-     console.log(book)
-     console.log(detail)
+    
     
     
      
      
    });
-//    founding book meassege 
+// founding book meassege 
+  
    const searchField=document.getElementById('searchField')
+   
    if(searchField.value === ''){
     document.getElementById('quantityMessage').innerText=`Type Something For Search `
    }
