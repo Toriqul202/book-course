@@ -8,7 +8,7 @@ const loadBook=()=>{
     .then(response=>response.json())
     
     .then(data=>getBookDetail(data))
-
+    
 }
 
 // ----------book detail--------------- 
@@ -59,7 +59,7 @@ const getBookDetail= detail=>{
     document.getElementById('quantityMessage').innerText=`${detail.docs.length} results found of ${detail.num_found} `
    }
    
-    
+   searchField.value="";
     
   
 };
